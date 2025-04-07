@@ -1,20 +1,20 @@
-import Link from "next/link"
-import { ModeToggle } from "./mode-toggle"
-import { MessageSquare } from "lucide-react"
+import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
-export default function Header() {
+export function Header() {
   return (
-    <header className="border-b backdrop-blur-sm bg-background/80 sticky top-0 z-40">
-      <div className="container max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-primary text-primary-foreground p-1.5 rounded-md group-hover:scale-110 transition-transform">
-            <MessageSquare className="h-5 w-5" />
-          </div>
-          <span className="font-bold text-xl">NoBS</span>
-        </Link>
-        <ModeToggle />
+    <header className="sticky top-0 z-50 w-full bg-background border-b">
+      <div className="container flex h-14 items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Link href="/" className="font-bold text-2xl">
+            NOBS
+          </Link>
+        </div>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
-  )
+  );
 }
 
