@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build",
+  "buildCommand": "pnpm install --no-frozen-lockfile && next build",
   "devCommand": "next dev",
   "installCommand": "pnpm install --no-frozen-lockfile",
   "framework": "nextjs",
@@ -13,7 +13,8 @@
       "src": "package.json",
       "use": "@vercel/next",
       "config": {
-        "installCommand": "pnpm install --no-frozen-lockfile"
+        "installCommand": "pnpm install --no-frozen-lockfile",
+        "includeDevDependencies": true
       }
     }
   ]
