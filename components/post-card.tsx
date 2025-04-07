@@ -33,6 +33,10 @@ export default function PostCard({ post }: PostCardProps) {
         if (success) {
           setLikes(likes + 1)
           setIsLiked(true)
+          
+          // Update localStorage with liked post
+          const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '[]')
+          localStorage.setItem('likedPosts', JSON.stringify([...likedPosts, post.id]))
         }
       } catch (error) {
         console.error("Failed to like post:", error)
@@ -45,6 +49,10 @@ export default function PostCard({ post }: PostCardProps) {
         if (success) {
           setLikes(likes - 1)
           setIsLiked(false)
+          
+          // Remove post from localStorage
+          const likedPosts = JSON.parse(localStorage.getItem('likedPosts') || '[]')
+          localStorage.setItem('likedPosts', JSON.stringify(likedPosts.filter((id: string) => id !== post.id)))
         }
       } catch (error) {
         console.error("Failed to unlike post:", error)
@@ -67,7 +75,13 @@ export default function PostCard({ post }: PostCardProps) {
         toast({ title: "Link copied!", description: "Post link copied to clipboard" })
       }
     } catch (error) {
-      console.error("Error sharing:", error)
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      console.error(`Error sharing post #${post.id}:`, errorMessage);
+      toast({ 
+        title: "Failed to share post", 
+        description: "There was an error sharing this post. Please try again.",
+        variant: "destructive"
+      });
     }
   }
 
