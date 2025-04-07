@@ -20,7 +20,7 @@
           "tailwind.config.js"
         ],
         "includeDevDependencies": true,
-        "nodeVersion": "18.x"
+        "nodeVersion": "22.x"
       }
     }
   ]
