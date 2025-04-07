@@ -61,7 +61,8 @@
     "@emotion/is-prop-valid": "latest",
     "framer-motion": "latest",
     "@vercel/blob": "latest",
-    "@supabase/supabase-js": "latest"
+    "@supabase/supabase-js": "latest",
+    "next-pwa": "^5.6.0"
   },
   "devDependencies": {
     "@types/node": "^22",
