@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pnpm install --no-frozen-lockfile && next build",
+  "buildCommand": "pnpm install && next build",
   "devCommand": "next dev",
-  "installCommand": "pnpm install --no-frozen-lockfile",
+  "installCommand": "pnpm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "env": {
@@ -13,8 +13,14 @@
       "src": "package.json",
       "use": "@vercel/next",
       "config": {
-        "installCommand": "pnpm install --no-frozen-lockfile",
-        "includeDevDependencies": true
+        "installCommand": "pnpm install",
+        "includeFiles": [
+          "next.config.js",
+          "postcss.config.js",
+          "tailwind.config.js"
+        ],
+        "includeDevDependencies": true,
+        "nodeVersion": "18.x"
       }
     }
   ]
