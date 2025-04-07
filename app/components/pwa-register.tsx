@@ -8,20 +8,20 @@ export default function PWARegister() {
       const wb = window.workbox;
       
       // Add event listeners to handle PWA lifecycle
-      wb.addEventListener('installed', event => {
+      wb.addEventListener('installed', (event: Event) => {
         console.log(`PWA installed: ${event.type}`);
       });
       
-      wb.addEventListener('controlling', event => {
+      wb.addEventListener('controlling', (event: Event) => {
         console.log(`PWA controlling: ${event.type}`);
       });
       
-      wb.addEventListener('activated', event => {
+      wb.addEventListener('activated', (event: Event) => {
         console.log(`PWA activated: ${event.type}`);
       });
       
       // Send a message to the service worker to skip waiting
-      wb.addEventListener('waiting', event => {
+      wb.addEventListener('waiting', () => {
         wb.messageSkipWaiting();
       });
       

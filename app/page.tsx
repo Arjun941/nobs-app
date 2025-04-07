@@ -4,10 +4,12 @@ import PostCarousel from "@/components/post-carousel"
 import CreatePostButton from "@/components/create-post-button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import PostsLoading from "@/components/posts-loading"
+import PWARegister from './components/pwa-register';
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-gradient-to-b from-background to-muted/30">
+      <PWARegister />
       <Header />
       <div className="container max-w-5xl mx-auto px-4 py-6 flex-1">
         <Tabs defaultValue="trending" className="w-full">
