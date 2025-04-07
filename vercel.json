@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pnpm install && next build",
+  "buildCommand": "npm install && next build",
   "devCommand": "next dev",
-  "installCommand": "pnpm install",
+  "installCommand": "npm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "env": {
@@ -13,7 +13,7 @@
       "src": "package.json",
       "use": "@vercel/next",
       "config": {
-        "installCommand": "pnpm install",
+        "installCommand": "npm install",
         "includeFiles": [
           "next.config.js",
           "postcss.config.js",
